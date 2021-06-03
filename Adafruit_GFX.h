@@ -28,7 +28,8 @@ class Adafruit_GFX : public Print {
   virtual void writeFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color);
   virtual void writeLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint16_t color);
   virtual void endWrite(void);
-
+  virtual void drawPet(int16_t x, int16_t y, int16_t w, int16_t h)
+	
   // CONTROL API
   // These MAY be overridden by the subclass to provide device-specific
   // optimized code.  Otherwise 'generic' versions are used.
