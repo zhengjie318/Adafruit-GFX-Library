@@ -35,6 +35,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #include "glcdfont.c"
 #include <math.h>
 #define PI 3.1415926
+#include "clock.h"
 #ifdef __AVR__
   #include <avr/pgmspace.h>
 #elif defined(ESP8266) || defined(ESP32)
@@ -410,6 +411,10 @@ void Adafruit_GFX::drawEllipse(int16_t x1, int16_t y1, int16_t x2, int16_t y2, i
     endWrite();
 }
 
+// Draw a clock
+void Adafruit_GFX::drawClock(int16_t x, int16_t y, uint16_t color){
+	drawBitmap(x, y, clock_bit, clock_width, clock_height, color);
+}
 
 // Draw a triangle
 void Adafruit_GFX::drawTriangle(int16_t x0, int16_t y0,
